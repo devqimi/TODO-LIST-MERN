@@ -48,8 +48,9 @@ function Todo(){
         axios.post('http://127.0.0.1:3001/addTodoList', { task: newTask, status: newStatus, deadline: newDeadline })
             .then(res => {
                 console.log(res);
-                window.location.reload(err);
+                window.location.reload();
             })
+            .catch(err => console.log(err));
     }
 
     // function to save edited data to database
@@ -117,7 +118,7 @@ function Todo(){
                                                     <input
                                                         type="text"
                                                         className='form-control'
-                                                        value={editedTasl}
+                                                        value={editedTask}
                                                         onChange={(e) => setEditedTask(e.target.value)}
                                                     />
                                                 ) : (
